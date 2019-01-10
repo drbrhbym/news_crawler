@@ -62,8 +62,8 @@ while True:
         crab(headtop)
     for ent in html.find_all("article", class_= "nclns eclnms9"):
         crab(ent)
-    for int in html.find_all("article", class_= "nclns eclnms7"):
-        crab(int)
+    for inter in html.find_all("article", class_= "nclns eclnms7"):
+        crab(inter)
     for spt in html.find_all("article", class_= "nclns eclnms10"):
         crab(spt)
     for eco in html.find_all("article", class_= "nclns eclnms8"):
