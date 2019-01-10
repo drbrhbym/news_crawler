@@ -46,7 +46,7 @@ def crab(class_):
         mycol.insert_one(mydict)
 
 #設定時間日期開始爬, n 用來計算日期(timedelta)
-start_day = date(2019, 1, 10)
+start_day = date(2019, 1, 2)
 n = 0
 
 while True:
@@ -68,8 +68,6 @@ while True:
         crab(spt)
     for eco in html.find_all("article", class_= "nclns eclnms8"):
         crab(eco)
-    for house in html.find_all("article", class_= "nclns eclnmsHouse"):
-        crab(house)
     for sub in html.find_all("article", class_= "nclns eclnmsHouse"):
         crab(sub)
 
