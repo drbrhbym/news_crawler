@@ -22,7 +22,7 @@ def crab(class_):
         aurl = content["href"]                            #取出新聞內容網址
         sum = content["title"]                            #取出新聞標題
         print(aurl, sum)
-        #再送一次request到新聞內容網址, 用美麗湯在解析出網頁內容
+        #再送一次request到新聞內容網址, 用美麗湯再解析出網頁內容
         response2 = urlopen(aurl)
         html2 = BeautifulSoup(response2)
         article = html2.find("article", class_="ndArticle_leftColumn") #取出新聞文章主要block，包含觀看人氣、發布日期及文章內容
@@ -60,8 +60,6 @@ while True:
     #每個分類需各自執行一次crab function, 因為各欄位擷取之class不同
     for headtop in html.find_all("article", class_="nclns eclnms5"):
         crab(headtop)
-
-    '''
     for ent in html.find_all("article", class_= "nclns eclnms9"):
         crab(ent)
     for int in html.find_all("article", class_= "nclns eclnms7"):
@@ -74,7 +72,7 @@ while True:
         crab(house)
     for sub in html.find_all("article", class_= "nclns eclnmsHouse"):
         crab(sub)
-    '''
+
 
     #計算timedelta, 負的表示日期往前推, n < -365 表示抓一整年的新聞
     n = n - 1
