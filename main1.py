@@ -46,7 +46,7 @@ def crab(class_):
         mycol.insert_one(mydict)
 
 #設定時間日期開始爬, n 用來計算日期(timedelta)
-start_day = date(2019, 1, 2)
+start_day = date(2018, 12, 31)
 n = 0
 
 while True:
@@ -58,6 +58,7 @@ while True:
     html = BeautifulSoup(response)
 
     #每個分類需各自執行一次crab function, 因為各欄位擷取之class不同
+    
     for headtop in html.find_all("article", class_="nclns eclnms5"):
         crab(headtop)
     for ent in html.find_all("article", class_= "nclns eclnms9"):
@@ -68,8 +69,7 @@ while True:
         crab(spt)
     for eco in html.find_all("article", class_= "nclns eclnms8"):
         crab(eco)
-    for sub in html.find_all("article", class_= "nclns eclnmsHouse"):
-        crab(sub)
+
 
 
     #計算timedelta, 負的表示日期往前推, n < -365 表示抓一整年的新聞
