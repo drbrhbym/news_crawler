@@ -1,7 +1,8 @@
 import requests
+import json
 
 #udn 範例
-url = "https://udn.com/news/story/12783/3596922"
+url = "https://tw.entertainment.appledaily.com/daily/20190117/38234340/"
 facebook_id = requests.get('https://graph.facebook.com/?id={}'.format(url)).json()  #['share']['comment_count']
 print(facebook_id)
 
